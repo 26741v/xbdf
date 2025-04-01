@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <!-- displays site properly based on user's device -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link
+            href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap"
+            rel="stylesheet"
+        />
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="./images/favicon-32x32.png"
+        />
+
+        <title>Frontend Mentor | Chat app CSS illustration</title>
+        <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+        <style>
+            body {
+                background-color: white;
+                width: 100vw;
+                height: 100vh;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                overflow-y: hidden;
+                overflow-x: hidden;
+            }
+            .rubik-400 {
+                font-family: "Rubik", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 400;
+                font-style: normal;
+            }
+
+            .rubik-500 {
+                font-family: "Rubik", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 500;
+                font-style: normal;
+            }
+
+            .rubik-700 {
+                font-family: "Rubik", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 700;
+                font-style: normal;
+            }
+
+            .attribution {
+                font-size: 11px;
+                text-align: center;
+            }
+            .attribution a {
+                color: hsl(228, 45%, 44%);
+            }
+
+            .phone-header {
+                color: white;
+
+                display: flex;
+                flex-direction: row;
+                align-items: center;
+                justify-content: space-between;
+            }
+
+            .flex {
+                display: flex;
+            }
+
+            .flex-row {
+                flex-direction: row;
+            }
+
+            .flex-col {
+                flex-direction: column;
+            }
+
+            .avatar {
+                border-width: 3px;
+                width: 40px;
+                height: 40px;
+                border-radius: calc(infinity * 1px);
+                border: solid white;
+                margin: 5px;
+            }
+
+            .text-xl {
+                font-size: 1.25rem;
+            }
+
+            .align-center {
+                align-items: center;
+            }
+
+            .sam-role {
+                color: hsl(276, 100%, 81%);
+            }
+
+            .icon {
+                font-size: 1rem;
+                padding: 1rem;
+            }
+
+            .phone {
+                width: 350px;
+                background-color: hsl(270, 20%, 96%);
+                border: 15px solid white;
+                border-radius: 20px;
+                box-shadow: 12px 12px 21px 1px rgba(0, 0, 0, 0.8);
+            }
+
+            .left-text {
+                background-color: #ede5f4;
+                border-radius: 1rem;
+                padding: 0.7rem;
+                margin-bottom: 0.3rem;
+                border-bottom-left-radius: 0px;
+            }
+
+            .right-text {
+                background-color: #fff;
+                border-radius: 1rem;
+                padding: 0.7rem;
+                margin-bottom: 0.3rem;
+                border-bottom-right-radius: 0px;
+            }
+
+            .left-texts {
+                color: hsl(276, 55%, 52%);
+                font-size: 0.6rem;
+                display: flex;
+                flex-direction: column;
+                align-items: start;
+                width: 70%;
+            }
+
+            .right-texts {
+                color: hsl(271, 15%, 43%);
+                font-size: 0.6rem;
+                display: flex;
+                width: 70%;
+                margin-left: 30%;
+                flex-direction: column;
+                align-items: end;
+            }
+
+            .texts {
+                padding: 0.6rem;
+            }
+
+            .dog-image {
+                border-radius: 1rem;
+                width: 60px;
+            }
+
+            .dog-gallery {
+                display: flex;
+                flex-direction: row;
+                gap: 10px;
+                margin-bottom: 10px;
+            }
+
+            .dog-prompt {
+                background: linear-gradient(
+                    to right,
+                    hsl(293, 100%, 63%),
+                    hsl(264, 100%, 61%)
+                );
+                width: 100%;
+                border-radius: 1rem;
+                padding: 0.7rem;
+                margin-bottom: 0.3rem;
+                border-bottom-left-radius: 0px;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+                color: white;
+            }
+
+            .dog-price {
+                font-size: 20px;
+                font-weight: bold;
+            }
+
+            .dog-o {
+                color: hsl(276, 100%, 81%);
+                font-size: 15px;
+                margin-right: 10px;
+            }
+
+            .input {
+                color: hsl(206, 6%, 79%);
+                background-color: #fff;
+                border-radius: 35px;
+                padding: 10px;
+                display: flex;
+                flex-direction: row;
+                width: 100%;
+                justify-content: space-between;
+            }
+
+            .input-container {
+                padding: 10px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+            }
+
+            .input-icon {
+                border-radius: calc(infinity * 1px);
+                background-color: hsl(271, 36%, 24%);
+                width: 15px;
+                height: 15px;
+                text-align: center;
+                padding: 10px;
+                justify-content: center;
+                display: flex;
+                align-items: center;
+                font-weight: bold;
+            }
+
+            .input-text {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 13px;
+            }
+
+            .notch {
+                border: 15px solid white;
+                border-bottom-left-radius: 30px;
+                border-bottom-right-radius: 30px;
+                width: 185px;
+                align-self: center;
+            }
+
+            .header-bg {
+                display: flex;
+                flex-direction: column;
+                background-color: hsl(293, 100%, 63%);
+                border-radius: 20px;
+                border-bottom-left-radius: 0px;
+                border-bottom-right-radius: 0px;
+            }
+
+            .page-title {
+                color: hsl(271, 36%, 24%);
+                font-size: 3.25rem;
+                font-weight: bold;
+                padding-left: 25px;
+            }
+
+            .page-paragraph {
+                color: hsl(270, 7%, 64%);
+                max-width: 500px;
+                padding: 25px;
+            }
+
+            .page-content {
+                margin-left: 75px;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Simple booking Stay in touch with our dog walkers through the chat
+        interface. This makes it easy to discuss arrangements and make bookings.
+        Once the walk has been completed you can rate your walker and book again
+        all through the chat. -->
+        <div class="flex flex-col phone">
+            <div class="header-bg">
+                <div class="notch"></div>
+                <div class="phone-header">
+                    <div class="flex flex-row align-center">
+                        <div class="rubik-700 bold icon"><</div>
+                        <div>
+                            <img src="images/avatar.jpg" class="avatar" />
+                        </div>
+                        <div class="flex flex-col">
+                            <div class="text-xl rubik-500">Samuel Green</div>
+                            <div class="rubik-500 sam-role">
+                                Available to Walk
+                            </div>
+                        </div>
+                    </div>
+                    <div class="rubik-700 bold icon">⋮</div>
+                </div>
+                <div class="content-right"></div>
+            </div>
+            <div class="texts">
+                <div class="left-texts rubik-400">
+                    <div class="left-text">
+                        That sounds great. I’d be happy with that.
+                    </div>
+                    <div class="left-text">
+                        Could you send over some pictures of your dog, please?
+                    </div>
+                </div>
+                <div class="right-texts rubik-400">
+                    <div class="dog-gallery">
+                        <img src="images/dog-image-1.jpg" class="dog-image" />
+                        <img src="images/dog-image-2.jpg" class="dog-image" />
+                        <img src="images/dog-image-3.jpg" class="dog-image" />
+                    </div>
+                    <div class="right-text">
+                        Here are a few pictures. She’s a happy girl!
+                    </div>
+                    <div class="right-text">Can you make it?</div>
+                </div>
+                <div class="left-texts rubik-400">
+                    <div class="left-text">
+                        She looks so happy! The time we discussed works. How
+                        long shall I take her out for?
+                    </div>
+                    <div class="dog-prompt">
+                        <div class="flex flex-row align-center">
+                            <div class="dog-o">O</div>
+                            <div>30 minute walk</div>
+                        </div>
+                        <div class="dog-price">$29</div>
+                    </div>
+                    <div class="dog-prompt">
+                        <div class="flex flex-row align-center">
+                            <div class="dog-o">O</div>
+                            <div>1 hour walk</div>
+                        </div>
+                        <div class="dog-price">$49</div>
+                    </div>
+                </div>
+                <!-- Input container -->
+                <div class="input-container">
+                    <div class="input">
+                        <div class="input-text rubik-400">
+                            Type a message...
+                        </div>
+                        <div class="input-icon rubik-400">></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col page-content">
+            <div class="text-xl rubik-400 page-title">Simple Booking</div>
+            <div class="rubik-400 page-paragraph">
+                Stay in touch with our dog walkers through the chat interface.
+                This makes it easy to discuss arrangements and make bookings.
+                Once the walk has been completed you can rate your walker and
+                book again all through the chat.
+            </div>
+        </div>
+    </body>
+</html>
